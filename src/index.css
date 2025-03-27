@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* 防止水平滾動條 */
+}
+
+.instrument-serif-regular {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.body{
+  margin:0px;
+}
+
+.swiper-slide {
+  width: 280px !important; /* 與圖片的 w-48 (192px) 一致 */
+}
+
+.swiper.wrapper{
+  width:80% !important;
+}
+
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #373936 !important; /* 強制設置圖標為白色 */
+  font-size: 18px;
+}

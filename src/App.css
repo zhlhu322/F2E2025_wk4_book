@@ -1,0 +1,157 @@
+.instrument-serif-regular {
+  font-family: "Instrument Serif", serif;
+  font-weight: 100;
+  font-style: light;
+}
+
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.header{
+  padding-top: 60px;
+  text-align: center;
+  font-weight: normal;
+  color: #383A37;
+}
+
+.header-text{
+  font-size: 20px;
+  font-weight: normal;
+  color: #383A37;
+  letter-spacing: 2px;
+}
+
+.header-line{
+  width:100px;
+  justify-self: center;
+}
+
+.home-container{
+  background-color: #E8E2D2;
+  height: 100vh;
+}
+
+.home-img{
+  width: 245px;
+  height: 360px;
+}
+
+.carousel{
+  display: flex;
+  padding-top: 40px;
+  width:60%;
+  align-items: center;
+  justify-self: center;
+}
+
+
+.carousel-img{
+  width:250px;
+  height:auto;
+}
+
+
+.category-container{
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  background-color: #C9B3A4;
+  height:100vh;
+}
+
+.category-header{
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom:20px;
+}
+
+.category-content{
+  gap: 170px;
+  margin-top:20px;
+}
+
+.category-title{
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  height:fit-content;
+}
+
+.book-gap{
+  margin-bottom: 40px;
+}
+
+.link{
+  text-decoration: none; /* 移除底線 */
+  color: inherit; /* 保持原本的字體顏色 */
+}
+
+.link:visited {
+  text-decoration: none; /* 確保點擊過的連結沒有底線 */
+  color: inherit; /* 保持與未點擊時相同的顏色 */
+}
+
+.product-page{
+  background-color: #E8E2D2;
+}
+
+.product-container{
+  display:flex;
+  flex-direction: row;
+  width:70%;
+  justify-self: center;
+  justify-content: center;
+  gap: 90px;
+  padding-top: 40px;
+  margin-bottom: 60px;
+}
+
+.product-img{
+  width:200px;
+  height:auto;
+}
+
+.product-title{
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.product-info{
+  font-size: 20px;
+}
+
+.product-description{
+  height:50vh;
+}
+
+.summary{
+  width:40%;
+  justify-self: center;
+  margin-top: 40px; 
+  padding:50px;
+  border-color: #373936;
+  border-style: solid;
+}
+
+.quantity-label{
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+
+.footer{
+  margin:0px;
+  padding:0px;
+  background-color: #6A7469;
+  height:80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#E8E2D2;
+}
