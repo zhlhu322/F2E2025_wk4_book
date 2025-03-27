@@ -35,8 +35,16 @@ html, body {
 }
 
 
+.swiper-button-prev{
+  margin-right:60px;
+}
+
+.swiper-button-next{
+  margin-left:60px;
+}
+
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  color: #373936 !important; /* 強制設置圖標為白色 */
+  color: white !important; 
   font-size: 18px;
 }

@@ -17,6 +17,9 @@ function Category() {
 
     return (
         <div className="category-container">
+            <div>
+                
+            </div>
             <div className="category-header">
                 <text className="instrument-serif-regular header-text">Category</text>
                 <hr className="header-line" />

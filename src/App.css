@@ -43,7 +43,7 @@
 .carousel{
   display: flex;
   padding-top: 40px;
-  width:60%;
+  width:70%;
   align-items: center;
   justify-self: center;
 }
@@ -61,6 +61,12 @@
   padding-top: 40px;
   background-color: #C9B3A4;
   height:100vh;
+}
+
+.bookcarousel-container{
+  position:relative;
+  width:100%;
+  justify-self: center;
 }
 
 .category-header{

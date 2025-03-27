@@ -42,42 +42,45 @@ const BookCarousel = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto flex">
-      <div className="swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2 z-10"></div>
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={20}
-        slidesPerView={3}
-        navigation={{
-          prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next',
-        }}
-        breakpoints={{
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-        }}
-      >
-        {books.map((book) => (
-          <SwiperSlide key={book.id}>
-            <div className="p-4 text-center">
-              <img
-                src={book.cover}
-                alt={book.title}
-                className="w-full h-80 object-cover carousel-img"
-              />
-              <p className="mt-2 text-lg instrument-serif-regular text-center">{book.title}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-        
-        
-      </Swiper>
-      <div className="swiper-button-next absolute top-1/2 right-0 transform -translate-y-1/2 z-10"></div>
+      <div className='bookcarousel-container'>
+        <div className="swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2 z-10"></div>
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={20}
+          slidesPerView={3}
+          navigation={{
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
+          }}
+        >
+          {books.map((book) => (
+            <SwiperSlide key={book.id}>
+              <div className="p-4 text-center">
+                <img
+                  src={book.cover}
+                  alt={book.title}
+                  className="w-full h-80 object-cover carousel-img"
+                />
+                <p className="mt-2 text-lg instrument-serif-regular text-center">{book.title}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+
+
+        </Swiper>
+        <div className="swiper-button-next absolute top-1/2 right-0 transform -translate-y-1/2 z-10"></div>
+      </div>
+
     </div>
   );
 };
