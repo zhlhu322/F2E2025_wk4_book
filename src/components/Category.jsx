@@ -25,7 +25,7 @@ function Category() {
                 <hr className="header-line" />
             </div>
 
-            <div className="flex flex-row sm:flex-row justify-center w-full max-w-5xl category-content">
+            <div className="flex flex-row sm:flex-row justify-center w-full max-w-5xl category-content relative">
                 {/* Horror Category */}
                 <div className="flex flex-col items-center">
                     <h3 className="text-lg instrument-serif-regular mb-4 category-title">Horror</h3>
@@ -35,7 +35,7 @@ function Category() {
                                 <img
                                     src={book.cover}
                                     alt={book.title}
-                                    className="w-[150px] h-auto object-cover "
+                                    className="w-[150px] h-auto object-cover book-cover-hover"
                                     onError={handleImageError}
                                 />
                                 <p className="mt-2 text-base instrument-serif-regular">{book.title}</p>
@@ -43,6 +43,9 @@ function Category() {
                         </div>
                     ))}
                 </div>
+
+                {/* 第一個分隔線 */}
+                <div className="category-divider" style={{ left: '38%' }}></div>
 
                 {/* Historical Category */}
                 <div className="flex flex-col items-center">
@@ -53,7 +56,7 @@ function Category() {
                                 <img
                                     src={book.cover}
                                     alt={book.title}
-                                    className="w-[150px] h-auto object-cover "
+                                    className="w-[150px] h-auto object-cover book-cover-hover"
                                     onError={handleImageError}
                                 />
                                 <p className="mt-2 text-base instrument-serif-regular">{book.title}</p>
@@ -62,7 +65,9 @@ function Category() {
                     ))}
                 </div>
 
-                
+                {/* 第二個分隔線 */}
+                <div className="category-divider" style={{ left: '60%' }}></div>
+
 
                 {/* Science-Fiction Category */}
                 <div className="flex flex-col items-center">
@@ -73,7 +78,7 @@ function Category() {
                                 <img
                                     src={book.cover}
                                     alt={book.title}
-                                    className="w-[150px] h-auto object-cover "
+                                    className="w-[150px] h-auto object-cover book-cover-hover"
                                     onError={handleImageError}
                                 />
                                 <p className="mt-2 text-base instrument-serif-regular">{book.title}</p>

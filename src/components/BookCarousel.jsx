@@ -1,86 +1,65 @@
 // src/components/BookCarousel.jsx
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
+import { Link } from 'react-router-dom';
+import booksData from '../json/books.json';
 
 const BookCarousel = () => {
-  const [books, setBooks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch('/books.json') // 使用絕對路徑 /books.json
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch books');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setBooks(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error.message);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <div className="text-center text-lg">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="text-center text-red-500">Error: {error}</div>;
-  }
+  const books = booksData;
 
   if (!books.length) {
     return <div className="text-center text-lg">No books available</div>;
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto flex">
-      <div className='bookcarousel-container'>
-        <div className="swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2 z-10"></div>
+    <div className="w-full max-w-5xl mx-auto">
+      <div className='bookcarousel-container relative py-10'>
+        <div className="custom-nav-buttons">
+          <div className="custom-prev-button"></div>
+          <div className="custom-next-button"></div>
+        </div>
         <Swiper
-          modules={[Navigation]}
-          spaceBetween={20}
+          modules={[Navigation, EffectCoverflow]}
+          effect={'coverflow'}
+          grabCursor={true}
+          centeredSlides={true}
+          loop={true}
           slidesPerView={3}
+          spaceBetween={60}
+          initialSlide={1}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+            slideShadows: false,
+          }}
           navigation={{
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
+            prevEl: '.custom-prev-button',
+            nextEl: '.custom-next-button',
           }}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 15,
-            },
-          }}
+          className="swiper-container"
         >
           {books.map((book) => (
-            <SwiperSlide key={book.id}>
-              <div className="p-4 text-center">
-                <img
-                  src={book.cover}
-                  alt={book.title}
-                  className="w-full h-80 object-cover carousel-img"
-                />
-                <p className="mt-2 text-lg instrument-serif-regular text-center">{book.title}</p>
-              </div>
+            <SwiperSlide key={book.ID}>
+              <Link to={`/book/${book.ID}`} className="link">
+                <div className="p-4 text-center">
+                  <img
+                    src={book.cover}
+                    alt={book.title}
+                    className="carousel-img mx-auto"
+                  />
+                  <p className="mt-2 text-lg instrument-serif-regular text-center">{book.title}</p>
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
-
-
         </Swiper>
-        <div className="swiper-button-next absolute top-1/2 right-0 transform -translate-y-1/2 z-10"></div>
       </div>
-
     </div>
   );
 };

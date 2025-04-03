@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <p>hope ypu enjoy!</p>
+      <p>hope you enjoy!</p>
     </footer>
   );
 }
